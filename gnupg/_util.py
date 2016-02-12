@@ -401,6 +401,8 @@ def _find_binary(binary=None):
     :returns: The absolute path to the GnuPG binary to use, if no exceptions
               occur.
     """
+    # there is some issues parsing `\` and ` `, let's make them explicit
+    return "C:\\\\Program\\ Files\\\\Git\\\\usr\\\\bin\\\\gpg.EXE"
     found = None
     if binary is not None:
         if os.path.isabs(binary) and os.path.isfile(binary):
